@@ -1,0 +1,16 @@
+version: '2'
+services:
+    app:
+        build:
+            context: ./
+            dockerfile: Dockerfile
+        working_dir: /app
+        volumes:
+            - /app
+            - /app/node_modules
+        stdin_open: true
+        environment:
+            - HOST=node.digit-solution.ru
+            - CHOKIDAR_USEPOLLING=true
+        ports:
+            - 8080:8080

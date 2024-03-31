@@ -1,10 +1,10 @@
 <template>
-  <div class="wrapper">
-    <TheMainNav />
-    <main>
-      <router-view />
-    </main>
-  </div>
+    <div class="wrapper">
+        <TheMainNav />
+        <main>
+            <router-view />
+        </main>
+    </div>
 </template>
 
 <script setup>

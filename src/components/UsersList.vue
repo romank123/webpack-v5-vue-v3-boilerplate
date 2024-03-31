@@ -1,18 +1,18 @@
 <template>
-  <p v-if="isLoading || error">
-    {{ isLoading ? 'Loading...' : error }}
-  </p>
-  <ul v-else-if="users.length">
-    <UsersListItem
-      v-for="user in users"
-      :key="user.id"
-      :item="user"
-      @delete-user="deleteUser"
-    />
-  </ul>
-  <p v-else>
-    No data
-  </p>
+    <p v-if="isLoading || error">
+        {{ isLoading ? 'Loading...' : error }}
+    </p>
+    <ul v-else-if="users.length">
+        <UsersListItem
+            v-for="user in users"
+            :key="user.id"
+            :item="user"
+            @delete-user="deleteUser"
+        />
+    </ul>
+    <p v-else>
+        No data
+    </p>
 </template>
 
 <script setup>
@@ -24,7 +24,7 @@ const { isLoading, data: users, error } = useAxios('https://jsonplaceholder.typi
 const store = useFavoritesStore();
 
 function deleteUser(userId) {
-  users.value = users.value.filter((user) => user.id !== userId);
-  store.removeFavoriteUser(userId);
+    users.value = users.value.filter((user) => user.id !== userId);
+    store.removeFavoriteUser(userId);
 }
 </script>

@@ -1,21 +1,21 @@
 <template>
-  <li>
-    <router-link :to="`/users/${props.item.id}`">
-      {{ props.item.name }}
-    </router-link>
-      &nbsp;
-    <BaseButton @click="visitUrl(`/users/${props.item.id}`)">
-      More info
-    </BaseButton>
-      &nbsp;
-    <BaseButton @click="deleteUser(props.item.id)">
-      Delete
-    </BaseButton>
-    <BtnFavorite
-      :item="props.item"
-      type="user"
-    />
-  </li>
+    <li>
+        <router-link :to="`/users/${props.item.id}`">
+            {{ props.item.name }}
+        </router-link>
+        &nbsp;
+        <BaseButton @click="visitUrl(`/users/${props.item.id}`)">
+            More info
+        </BaseButton>
+        &nbsp;
+        <BaseButton @click="deleteUser(props.item.id)">
+            Delete
+        </BaseButton>
+        <BtnFavorite
+            :item="props.item"
+            type="user"
+        />
+    </li>
 </template>
 
 <script setup>
@@ -25,19 +25,19 @@ import BtnFavorite from '@/components/BtnFavorite.vue';
 
 const emit = defineEmits(['deleteUser']);
 const props = defineProps({
-  item: {
-    type: Object,
-    default: () => {},
-  },
+    item: {
+        type: Object,
+        default: () => {},
+    },
 });
 
 const router = useRouter();
 
 function visitUrl(url) {
-  router.push(url);
+    router.push(url);
 }
 
 function deleteUser(userId) {
-  emit('deleteUser', userId);
+    emit('deleteUser', userId);
 }
 </script>

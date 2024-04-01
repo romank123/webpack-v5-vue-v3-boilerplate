@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
 import TheHome from '@/views/TheHome.vue';
 import TheUsers from '@/views/TheUsers.vue';
 import TheSingleUser from '@/views/TheSingleUser.vue';
@@ -8,7 +8,7 @@ import TheFavorites from '@/views/TheFavorites.vue';
 import ThePageNotFound from '@/views/ThePageNotFound.vue';
 
 const router = createRouter({
-    history: createWebHashHistory(),
+    history: createWebHistory(),
     activeClass: 'asdf',
     routes: [
         { path: '/', component: TheHome },
